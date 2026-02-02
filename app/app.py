@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
-from .model import load_model, predict_image
+from app.model import load_model, predict_image
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
