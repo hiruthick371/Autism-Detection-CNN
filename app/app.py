@@ -1,8 +1,17 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from .model import load_model, predict_image
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 model = load_model()
